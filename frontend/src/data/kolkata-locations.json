@@ -1,0 +1,612 @@
+[
+ {
+  "id": "techno-india",
+  "name": "Techno India University (Salt Lake Sector V)",
+  "category": "school",
+  "lat": 22.5756,
+  "lng": 88.4274,
+  "db": 66,
+  "type": "Primary campus node, EM-4 Sector V",
+  "sources": [
+   "Office-cab traffic",
+   "College More horns",
+   "Food-stall crowds"
+  ],
+  "sv": {
+   "lat": 22.5749,
+   "lng": 88.4282,
+   "road": "Street Number 2"
+  },
+  "featured": true
+ },
+ {
+  "id": "iem",
+  "name": "IEM (Institute of Engineering & Management), Sector V",
+  "category": "school",
+  "lat": 22.5701,
+  "lng": 88.4319,
+  "db": 64,
+  "type": "Engineering campus in the IT hub",
+  "sources": [
+   "Shift-change shuttles",
+   "DG generators",
+   "Bus horns"
+  ],
+  "sv": {
+   "lat": 22.57,
+   "lng": 88.431,
+   "road": "Street Number 18"
+  }
+ },
+ {
+  "id": "jadavpur",
+  "name": "Jadavpur University (Main Campus & 8B Gate)",
+  "category": "school",
+  "lat": 22.4989,
+  "lng": 88.3714,
+  "db": 74,
+  "type": "Campus beside the 8B bus terminus",
+  "sources": [
+   "8B bus terminus",
+   "Conductor calls",
+   "Auto stand"
+  ],
+  "sv": {
+   "lat": 22.4985,
+   "lng": 88.3712,
+   "road": "Jadavpur University campus"
+  }
+ },
+ {
+  "id": "presidency",
+  "name": "Presidency University & Hindu School (College St)",
+  "category": "school",
+  "lat": 22.5762,
+  "lng": 88.3631,
+  "db": 71,
+  "type": "University and school on College Street",
+  "sources": [
+   "Through traffic",
+   "Street vendors",
+   "Rally loudspeakers"
+  ],
+  "sv": {
+   "lat": 22.576,
+   "lng": 88.3636,
+   "road": "College St"
+  }
+ },
+ {
+  "id": "calcutta-university",
+  "name": "University of Calcutta (College Street Campus)",
+  "category": "school",
+  "lat": 22.5748,
+  "lng": 88.3627,
+  "db": 72,
+  "type": "College Street campus by the book market",
+  "sources": [
+   "Book-market crowds",
+   "Bus & tram traffic",
+   "Loudspeakers"
+  ],
+  "sv": {
+   "lat": 22.5748,
+   "lng": 88.3627,
+   "road": "Maulana Saukat Ali St"
+  }
+ },
+ {
+  "id": "st-xaviers",
+  "name": "St. Xavier's College & School (Park Street)",
+  "category": "school",
+  "lat": 22.5488,
+  "lng": 88.3563,
+  "db": 65,
+  "type": "College and school on Park Street",
+  "sources": [
+   "School-run traffic",
+   "Park Street horns",
+   "Restaurant music"
+  ],
+  "sv": {
+   "lat": 22.5495,
+   "lng": 88.3555,
+   "road": "Park St"
+  }
+ },
+ {
+  "id": "south-point",
+  "name": "South Point High School (Ballygunge)",
+  "category": "school",
+  "lat": 22.5236,
+  "lng": 88.3688,
+  "db": 69,
+  "type": "Large school on Mandeville Gardens",
+  "sources": [
+   "School-run queues",
+   "Ballygunge traffic",
+   "Horns"
+  ],
+  "sv": {
+   "lat": 22.5236,
+   "lng": 88.3688,
+   "road": "Ballygunge"
+  }
+ },
+ {
+  "id": "la-martiniere",
+  "name": "La Martiniere for Boys & Girls (Loudon St)",
+  "category": "school",
+  "lat": 22.5446,
+  "lng": 88.3556,
+  "db": 63,
+  "type": "Schools on Loudon St & Rawdon St",
+  "sources": [
+   "School-run traffic",
+   "Shakespeare Sarani horns",
+   "Construction"
+  ],
+  "sv": {
+   "lat": 22.5446,
+   "lng": 88.3556,
+   "road": "Shakespeare Sarani"
+  }
+ },
+ {
+  "id": "scottish-church",
+  "name": "Scottish Church College & School (Hedua)",
+  "category": "school",
+  "lat": 22.5878,
+  "lng": 88.3672,
+  "db": 67,
+  "type": "College by Hedua park",
+  "sources": [
+   "Bidhan Sarani traffic",
+   "Tram line",
+   "Street vendors"
+  ],
+  "sv": {
+   "lat": 22.5878,
+   "lng": 88.3672,
+   "road": "Simla St"
+  }
+ },
+ {
+  "id": "loreto-house",
+  "name": "Loreto House & St. Thomas' School (Middleton Row)",
+  "category": "school",
+  "lat": 22.5504,
+  "lng": 88.3519,
+  "db": 61,
+  "type": "Schools off Park Street",
+  "sources": [
+   "School-run traffic",
+   "Park Street evening traffic",
+   "Horns"
+  ],
+  "sv": {
+   "lat": 22.551,
+   "lng": 88.3525,
+   "road": "Sir William Jones Sarani"
+  }
+ },
+ {
+  "id": "hariyana-vidya-mandir",
+  "name": "Hariyana Vidya Mandir & Bharatiya Vidya Bhavan (Salt Lake)",
+  "category": "school",
+  "lat": 22.5812,
+  "lng": 88.4148,
+  "db": 52,
+  "type": "Schools in quiet Salt Lake blocks",
+  "sources": [
+   "Local traffic",
+   "School buses",
+   "Morning assembly"
+  ],
+  "sv": {
+   "lat": 22.5812,
+   "lng": 88.4148,
+   "road": "Broadway Rd"
+  }
+ },
+ {
+  "id": "dama",
+  "name": "Techno India DAMA Hospital (EM Bypass / Chingrighata)",
+  "category": "hospital",
+  "lat": 22.5594,
+  "lng": 88.4092,
+  "db": 75,
+  "type": "Hospital beside the Chingrighata flyover",
+  "sources": [
+   "EM Bypass traffic",
+   "Flyover horns",
+   "Ambulance sirens"
+  ],
+  "sv": {
+   "lat": 22.5594,
+   "lng": 88.4092,
+   "road": "CIT Bldg Campus Ln"
+  }
+ },
+ {
+  "id": "amri-salt-lake",
+  "name": "AMRI Hospital (Salt Lake JC Block)",
+  "category": "hospital",
+  "lat": 22.5675,
+  "lng": 88.4116,
+  "db": 68,
+  "type": "Hospital on Salt Lake Broadway",
+  "sources": [
+   "Broadway traffic",
+   "Ambulance sirens",
+   "Visitor crowds"
+  ],
+  "sv": {
+   "lat": 22.5668,
+   "lng": 88.411,
+   "road": "Broadway Rd"
+  }
+ },
+ {
+  "id": "columbia-asia",
+  "name": "Columbia Asia / Manipal Hospital (Salt Lake Broadway)",
+  "category": "hospital",
+  "lat": 22.5689,
+  "lng": 88.4129,
+  "db": 66,
+  "type": "Hospital on Salt Lake Broadway",
+  "sources": [
+   "Broadway traffic",
+   "Ambulance sirens",
+   "Taxi horns"
+  ],
+  "sv": {
+   "lat": 22.5668,
+   "lng": 88.411,
+   "road": "Broadway Rd"
+  },
+  "svNote": "Google has no Street View at this gate; the panorama is the nearest outdoor imagery on Broadway Rd, about 300 m south."
+ },
+ {
+  "id": "bidhannagar-sdh",
+  "name": "Bidhannagar Sub-Divisional Hospital (Salt Lake)",
+  "category": "hospital",
+  "lat": 22.5835,
+  "lng": 88.4178,
+  "db": 58,
+  "type": "Government hospital in Salt Lake",
+  "sources": [
+   "Local traffic",
+   "Ambulances",
+   "OPD crowds"
+  ],
+  "sv": {
+   "lat": 22.583,
+   "lng": 88.4165,
+   "road": "Lane No. 1, Bidhannagar"
+  }
+ },
+ {
+  "id": "sskm",
+  "name": "SSKM Hospital / IPGMER (Bhowanipore)",
+  "category": "hospital",
+  "lat": 22.5393,
+  "lng": 88.3425,
+  "db": 74,
+  "type": "Hospital gate on AJC Bose Road",
+  "sources": [
+   "Taxi & bus horns",
+   "Ambulance corridor",
+   "Street hawkers"
+  ],
+  "sv": {
+   "lat": 22.541,
+   "lng": 88.344,
+   "road": "Harish Mukherjee Rd"
+  }
+ },
+ {
+  "id": "calcutta-medical-college",
+  "name": "Calcutta Medical College & Hospital (College St)",
+  "category": "hospital",
+  "lat": 22.5735,
+  "lng": 88.3639,
+  "db": 78,
+  "type": "Teaching hospital by the book market",
+  "sources": [
+   "Bus & tram traffic",
+   "Book-market crowds",
+   "Loudspeakers"
+  ],
+  "sv": {
+   "lat": 22.5733,
+   "lng": 88.3655,
+   "road": "Surya Sen St"
+  }
+ },
+ {
+  "id": "nrs",
+  "name": "NRS Medical College & Hospital (Sealdah)",
+  "category": "hospital",
+  "lat": 22.5648,
+  "lng": 88.3689,
+  "db": 81,
+  "type": "Hospital next to Sealdah station",
+  "sources": [
+   "Sealdah station traffic",
+   "AJC Bose Rd horns",
+   "Ambulance sirens"
+  ],
+  "sv": {
+   "lat": 22.5648,
+   "lng": 88.3689,
+   "road": "AJC Bose Rd (SH 1)"
+  }
+ },
+ {
+  "id": "rg-kar",
+  "name": "R.G. Kar Medical College & Hospital (Shyambazar)",
+  "category": "hospital",
+  "lat": 22.6041,
+  "lng": 88.3782,
+  "db": 76,
+  "type": "Hospital near the Shyambazar crossing",
+  "sources": [
+   "Shyambazar traffic",
+   "Bus horns",
+   "Ambulance sirens"
+  ],
+  "sv": {
+   "lat": 22.6041,
+   "lng": 88.3782,
+   "road": "Khudiram Bose Sarani"
+  }
+ },
+ {
+  "id": "apollo",
+  "name": "Apollo Multispeciality Hospitals (EM Bypass / Phoolbagan)",
+  "category": "hospital",
+  "lat": 22.5744,
+  "lng": 88.4017,
+  "db": 72,
+  "type": "Hospital on the EM Bypass",
+  "sources": [
+   "EM Bypass traffic",
+   "Truck horns",
+   "Ambulance sirens"
+  ],
+  "sv": {
+   "lat": 22.5744,
+   "lng": 88.4017,
+   "road": "Apollo hospital gate"
+  }
+ },
+ {
+  "id": "ruby",
+  "name": "Ruby General Hospital (Kasba / EM Bypass)",
+  "category": "hospital",
+  "lat": 22.5134,
+  "lng": 88.4014,
+  "db": 73,
+  "type": "Hospital at the Ruby crossing",
+  "sources": [
+   "Ruby crossing traffic",
+   "Flyover horns",
+   "Bus stops"
+  ],
+  "sv": {
+   "lat": 22.5134,
+   "lng": 88.4014,
+   "road": "Rashbehari Ave Connector"
+  }
+ },
+ {
+  "id": "fortis",
+  "name": "Fortis Hospital (Anandapur)",
+  "category": "hospital",
+  "lat": 22.5186,
+  "lng": 88.4019,
+  "db": 64,
+  "type": "Hospital off the EM Bypass",
+  "sources": [
+   "EM Bypass traffic",
+   "Ambulances",
+   "Construction"
+  ],
+  "sv": {
+   "lat": 22.5195,
+   "lng": 88.4,
+   "road": "EM Bypass service road"
+  }
+ },
+ {
+  "id": "college-more",
+  "name": "College More Crossing (Salt Lake Sector V)",
+  "category": "traffic",
+  "lat": 22.5734,
+  "lng": 88.4331,
+  "db": 84,
+  "type": "IT-hub crossing at shift change",
+  "sources": [
+   "Office cabs",
+   "Bus horns",
+   "Auto-rickshaws"
+  ],
+  "sv": {
+   "lat": 22.5734,
+   "lng": 88.4331,
+   "road": "Street Number 18"
+  }
+ },
+ {
+  "id": "wipro-more",
+  "name": "Wipro More Junction (Salt Lake Sector V)",
+  "category": "traffic",
+  "lat": 22.5786,
+  "lng": 88.4304,
+  "db": 81,
+  "type": "Sector V junction",
+  "sources": [
+   "Shuttle buses",
+   "Horns",
+   "DG generators"
+  ],
+  "sv": {
+   "lat": 22.5786,
+   "lng": 88.4304,
+   "road": "Street Number 11"
+  }
+ },
+ {
+  "id": "chingrighata",
+  "name": "Chingrighata Flyover & EM Bypass Crossing",
+  "category": "traffic",
+  "lat": 22.5582,
+  "lng": 88.4109,
+  "db": 91,
+  "type": "Flyover junction on the EM Bypass",
+  "sources": [
+   "Heavy trucks",
+   "Flyover traffic",
+   "Pressure horns"
+  ],
+  "sv": {
+   "lat": 22.5582,
+   "lng": 88.4109,
+   "road": "Canal S Rd"
+  }
+ },
+ {
+  "id": "ultadanga",
+  "name": "Ultadanga / Hudco More Crossing",
+  "category": "traffic",
+  "lat": 22.5936,
+  "lng": 88.3932,
+  "db": 89,
+  "type": "VIP Road gateway crossing",
+  "sources": [
+   "Inter-city buses",
+   "Truck horns",
+   "Flyover traffic"
+  ],
+  "sv": {
+   "lat": 22.593,
+   "lng": 88.392,
+   "road": "Basanti Colony"
+  }
+ },
+ {
+  "id": "esplanade",
+  "name": "Esplanade / Dharmatala Crossing",
+  "category": "traffic",
+  "lat": 22.5646,
+  "lng": 88.3516,
+  "db": 94,
+  "type": "Bus terminus and tram crossing",
+  "sources": [
+   "Bus terminus idling",
+   "Pressure horns",
+   "Tram crossing"
+  ],
+  "sv": {
+   "lat": 22.5641,
+   "lng": 88.3513,
+   "road": "Chowringhee Rd"
+  }
+ },
+ {
+  "id": "shyambazar",
+  "name": "Shyambazar 5-Point Crossing",
+  "category": "traffic",
+  "lat": 22.6015,
+  "lng": 88.3736,
+  "db": 88,
+  "type": "5-way intersection",
+  "sources": [
+   "5-way signal queues",
+   "Auto-rickshaw horns",
+   "Metro construction"
+  ],
+  "sv": {
+   "lat": 22.6008,
+   "lng": 88.3718,
+   "road": "KR Bose St"
+  }
+ },
+ {
+  "id": "howrah",
+  "name": "Howrah Station Approach & Bridge",
+  "category": "traffic",
+  "lat": 22.5839,
+  "lng": 88.3428,
+  "db": 93,
+  "type": "Station mouth and bridge approach",
+  "sources": [
+   "Taxi & bus scrum",
+   "Station PA system",
+   "Bridge traffic"
+  ],
+  "sv": {
+   "lat": 22.5862,
+   "lng": 88.3448,
+   "road": "Howrah Railway Rd"
+  }
+ },
+ {
+  "id": "sealdah",
+  "name": "Sealdah Station Flyover & APC Road",
+  "category": "traffic",
+  "lat": 22.5667,
+  "lng": 88.3705,
+  "db": 92,
+  "type": "Station flyover and APC Road",
+  "sources": [
+   "Station traffic",
+   "Flyover horns",
+   "Bus stands"
+  ],
+  "sv": {
+   "lat": 22.5675,
+   "lng": 88.3698,
+   "road": "Sealdah Flyover Rd"
+  }
+ },
+ {
+  "id": "park-street",
+  "name": "Park Street & Chowringhee Crossing",
+  "category": "traffic",
+  "lat": 22.5535,
+  "lng": 88.3525,
+  "db": 82,
+  "type": "Evening crowd and traffic crossing",
+  "sources": [
+   "Evening traffic",
+   "Restaurant music",
+   "Pedestrian crowds"
+  ],
+  "sv": {
+   "lat": 22.554,
+   "lng": 88.351,
+   "road": "Russel St"
+  }
+ },
+ {
+  "id": "gariahat",
+  "name": "Gariahat 4-Point Crossing",
+  "category": "traffic",
+  "lat": 22.5194,
+  "lng": 88.3654,
+  "db": 86,
+  "type": "Market crossing",
+  "sources": [
+   "Market crowds",
+   "Bus horns",
+   "Flyover traffic"
+  ],
+  "sv": {
+   "lat": 22.5194,
+   "lng": 88.3654,
+   "road": "Gariahat Flyover"
+  }
+ }
+]
