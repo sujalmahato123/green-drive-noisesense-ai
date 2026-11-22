@@ -38,3 +38,6 @@ pnpm-debug.log*
 
 # Local tooling
 .claude/
+
+# Vercel CLI link + tokens
+.vercel/

@@ -328,13 +328,25 @@ const SoundSandbox = () => {
     try {
       const fd = new FormData()
       fd.append('file', file)
-      const { data } = await axios.post('/api/classify-audio', fd)
-      if (data.error) throw new Error(data.error)
-      setResult({ soundType: data.soundType, confidence: data.confidence, db: null, origin: 'YAMNet · /api/classify-audio' })
+      const { data } = await axios.post('/api/classify-audio', fd, { timeout: 8000 })
+      if (!data || typeof data !== 'object' || !data.soundType || data.error) throw new Error('no classifier')
+      setResult({ soundType: data.soundType, confidence: data.confidence, db: null, origin: 'Classified by YAMNet backend' })
       setStatus('done')
-    } catch (e) {
-      setResult({ error: e.response ? `Backend error ${e.response.status}` : e.message || 'Backend unreachable' })
-      setStatus('error')
+    } catch {
+      // No backend (e.g. the static Vercel deploy): simulate a classification from the file name
+      const name = file.name.toLowerCase()
+      const guess =
+        /horn|honk|car|traffic|bus/.test(name) ? 'Vehicle Horn'
+          : /drill|construct|hammer/.test(name) ? 'Drilling'
+            : /shout|crowd|voice|speech|yell/.test(name) ? 'Shouting'
+              : /music|song|speaker|dj/.test(name) ? 'Loud Music'
+                : Object.keys(PRESETS)[Math.floor(Math.random() * 4)]
+      const p = PRESETS[guess]
+      setPreset(guess)
+      setTimeout(() => {
+        setResult({ soundType: guess, confidence: +(p.conf - Math.random() * 0.08).toFixed(2), db: p.db, origin: 'Simulated classification (demo mode, no backend)' })
+        setStatus('done')
+      }, 900)
     }
   }
 
@@ -371,7 +383,7 @@ const SoundSandbox = () => {
           <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#fff' }}>
             {fileName || 'Drop .wav / .mp3 or browse'}
           </div>
-          <div style={{ fontFamily: MONO, fontSize: 10, color: C.faint, marginTop: 4 }}>Sent to POST /api/classify-audio</div>
+          <div style={{ fontFamily: MONO, fontSize: 10, color: C.faint, marginTop: 4 }}>{result?.origin && fileName ? result.origin : 'Sent to POST /api/classify-audio'}</div>
         </div>
         <input type="file" accept=".wav,.mp3,audio/wav,audio/mpeg" style={{ display: 'none' }} onChange={(e) => classifyFile(e.target.files?.[0])} />
       </label>
@@ -426,6 +438,7 @@ const Dashboard = ({ onSwitchToOverview, stickyTop = 0 }) => {
   const [link, setLink] = useState('demo') // demo | connecting | ok | down
   const [selectedId, setSelectedId] = useState(null)
   const seededLive = useRef(false)
+  const [liveOffline, setLiveOffline] = useState(false) // live mode requested but no backend reachable
 
   /* Demo telemetry: drift every node toward its baseline with random spikes */
   useEffect(() => {
@@ -447,6 +460,7 @@ const Dashboard = ({ onSwitchToOverview, stickyTop = 0 }) => {
   useEffect(() => {
     if (demoMode) return
     let cancelled = false
+    let connected = false
     seededLive.current = false
     setLink('connecting')
     const poll = async () => {
@@ -480,9 +494,18 @@ const Dashboard = ({ onSwitchToOverview, stickyTop = 0 }) => {
           setTrend(tsRes.data.map((d) => ({ t: d.time, leq: d.avgNoise, peak: d.maxNoise, crit: 0 })))
           seededLive.current = true
         }
+        connected = true
+        setLiveOffline(false)
         setLink('ok')
       } catch {
-        if (!cancelled) setLink('down')
+        if (cancelled) return
+        if (!connected) {
+          // backend never answered (e.g. static hosting): quietly stay on simulated telemetry
+          setLiveOffline(true)
+          setDemoMode(true)
+        } else {
+          setLink('down')
+        }
       }
     }
     poll()
@@ -574,6 +597,11 @@ const Dashboard = ({ onSwitchToOverview, stickyTop = 0 }) => {
           <div style={{ flex: 1 }} />
 
           <ModeSwitch demo={demoMode} onChange={switchMode} />
+          {liveOffline && demoMode && (
+            <span title="No FastAPI backend reachable from this deployment" style={{ fontFamily: MONO, fontSize: 9, letterSpacing: '0.14em', textTransform: 'uppercase', color: C.amber, border: '1px solid rgba(245,158,11,0.4)', padding: '5px 8px' }}>
+              Live backend offline · demo telemetry
+            </span>
+          )}
 
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <span style={label}>Threshold</span>
