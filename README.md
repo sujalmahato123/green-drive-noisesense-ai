@@ -49,6 +49,7 @@ python -m uvicorn main:app --reload --port 8000
 ```
 
 The SQLite database is created and seeded with the 32 locations on first start.
+For real YAMNet classification (optional, heavy) also run `pip install -r requirements-ml.txt`; without it the API uses a built-in fallback classifier.
 
 **Frontend** (http://localhost:5173), in a second terminal:
 
@@ -61,6 +62,21 @@ npm run dev
 Vite proxies `/api/*` to the backend, so the Control Center's **Live Device** mode reads from FastAPI; **Demo Mode** works without it.
 
 Or run both together from the project root with `npm install && npm run dev`.
+
+## Deploy
+
+**Backend → Render** (Blueprint: [`render.yaml`](render.yaml), or a Web Service with these settings)
+
+| Setting | Value |
+|---|---|
+| Root directory | `backend` |
+| Build command | `pip install -r requirements.txt` |
+| Start command | `uvicorn main:app --host 0.0.0.0 --port $PORT` |
+| Health check | `/api/health` |
+| Env `PYTHON_VERSION` | `3.11.9` |
+| Env `CORS_ORIGINS` (optional) | `https://green-drive-noisesense-ai.vercel.app` (comma-separated; this is the default) |
+
+**Frontend → Vercel** (root directory `frontend`): set **`VITE_API_URL`** to the Render URL, e.g. `https://green-drive-noisesense-api.onrender.com` (no trailing slash), then redeploy. Without it the site runs on simulated demo telemetry.
 
 ## API
 

@@ -1,0 +1,7 @@
+# Optional: real YAMNet audio classification (heavy, ~1 GB with TensorFlow).
+# Without these the API uses its built-in fallback classifier.
+# Install locally with: pip install -r requirements.txt -r requirements-ml.txt
+librosa==0.10.0
+soundfile==0.12.1
+tensorflow==2.14.0
+tensorflow-hub==0.15.0

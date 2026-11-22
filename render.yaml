@@ -1,0 +1,16 @@
+# Render Blueprint for the NoiseSense FastAPI backend.
+# Render → New → Blueprint → pick this repo, and it reads these settings.
+services:
+  - type: web
+    name: green-drive-noisesense-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: CORS_ORIGINS
+        value: https://green-drive-noisesense-ai.vercel.app,http://localhost:5173

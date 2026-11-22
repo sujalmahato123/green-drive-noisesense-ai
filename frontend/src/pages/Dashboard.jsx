@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react'
 import axios from 'axios'
+import { apiUrl, REMOTE_API } from '../lib/api'
 import { MapContainer, TileLayer, Marker, Circle, useMap } from 'react-leaflet'
 import { streetPointFor } from '../components/StreetView'
 import AsciiReveal from '../components/AsciiReveal'
@@ -328,7 +329,7 @@ const SoundSandbox = () => {
     try {
       const fd = new FormData()
       fd.append('file', file)
-      const { data } = await axios.post('/api/classify-audio', fd, { timeout: 8000 })
+      const { data } = await axios.post(apiUrl('/api/classify-audio'), fd, { timeout: REMOTE_API ? 30000 : 8000 })
       if (!data || typeof data !== 'object' || !data.soundType || data.error) throw new Error('no classifier')
       setResult({ soundType: data.soundType, confidence: data.confidence, db: null, origin: 'Classified by YAMNet backend' })
       setStatus('done')
@@ -465,8 +466,10 @@ const Dashboard = ({ onSwitchToOverview, stickyTop = 0 }) => {
     setLink('connecting')
     const poll = async () => {
       try {
-        const reqs = [axios.get('/api/locations', { timeout: 4000 })]
-        if (!seededLive.current) reqs.push(axios.get('/api/analytics/timeseries?period=24h', { timeout: 4000 }))
+        // A sleeping free-tier backend can take ~30-60 s to wake on the first request
+        const timeout = REMOTE_API && !connected ? 60000 : 8000
+        const reqs = [axios.get(apiUrl('/api/locations'), { timeout })]
+        if (!seededLive.current) reqs.push(axios.get(apiUrl('/api/analytics/timeseries?period=24h'), { timeout }))
         const [locRes, tsRes] = await Promise.all(reqs)
         if (cancelled) return
         setNodes((prev) =>

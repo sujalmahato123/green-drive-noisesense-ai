@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI, HTTPException, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -16,11 +17,20 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Enable CORS
+# CORS: the Vercel frontend + local dev. Override with a comma-separated CORS_ORIGINS env var.
+DEFAULT_CORS_ORIGINS = [
+    "https://green-drive-noisesense-ai.vercel.app",
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+CORS_ORIGINS = [o.strip().rstrip("/") for o in os.getenv("CORS_ORIGINS", "").split(",") if o.strip()] or DEFAULT_CORS_ORIGINS
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
+    allow_origins=CORS_ORIGINS,
+    # Vercel preview deployments of the same project
+    allow_origin_regex=r"https://green-drive-noisesense-ai(-[a-z0-9-]+)?\.vercel\.app",
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
